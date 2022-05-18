@@ -1,52 +1,45 @@
 class Employee:
-
-    def __init__(self, name, ids, department, title):
+    def __init__(self, name, ID, salary, email):
+        # assigning name, id, salary and email to private instance variables.
+        # private variables in Python are indicated by double underscore before its name
         self.__name = name
-        self.__ids = ids
-        self.__department = department
-        self.__title = title
+        self.__ID = ID
+        self.__salary = salary
+        self.__email = email
 
-    # set the attributes
-    def set_name(self, name):
-        self.__name = name
+    # getter methods
 
-    def set_ids(self, ids):
-        self.__ids = ids
-
-    def set_department(self, department):
-        self.__department = department
-
-    def set_title(self, title):
-        self.__title = title
-
-    # return the attributes
     def get_name(self):
         return self.__name
 
-    def get_ids(self):
-        return self.__ids
+    def get_ID_number(self):
+        return self.__ID
 
-    def get_department(self):
-        return self.__department
+    def get_salary(self):
+        return self.__salary
 
-    def get_title(self):
-        return self.__title
-
-    # return the objects state as a string
-
-    def make_employee_dict(emp_names, emp_ids, emp_sals, emp_emails):
-        return 'Name: ' + self.__name + \
-               '\nID number: ' + self.__ids + \
-               '\nDepartment: ' + self.__department + \
-               '\nTitle: ' + self.__title
+    def get_email_address(self):
+        return self.__email
 
 
+# make_employee_dict method, which is not part of Employee class. so indentation must be 0
+def make_employee_dict(names, ids, salaries, emails):
+    # creating a dict
+    employee_dict = dict()
+    # looping from 0 to len(names)-1
+    for i in range(len(names)):
+        # creating an Employee using ith elements in all lists as name, id, salary and email
+        employee = Employee(names[i], ids[i], salaries[i], emails[i])
+        # adding employee to dict with id being the key
+        employee_dict[ids[i]] = employee
+    return employee_dict
 
 
-
-emp_names = ["Jean", "Kat", "Pomona"]
-emp_ids = ["100", "101", "102"]
-emp_sals = [30, 35, 28]
-emp_emails = ["Jean@aol.com", "Kat@aol.com", "Pomona@aol.com"]
-result = make_employee_dict(emp_names, emp_ids, emp_sals, emp_emails)
-print(result["100"].get_name())
+# code for testing
+if __name__ == '__main__':
+    emp_names = ["Jean", "Kat", "Pomona"]
+    emp_ids = ["100", "101", "102"]
+    emp_sals = [30, 35, 28]
+    emp_emails = ["Jean@aol.com", "Kat@aol.com", "Pomona@aol.com"]
+    result = make_employee_dict(emp_names, emp_ids, emp_sals, emp_emails)
+    print(result["100"].get_name())  # should print "Jean"
