@@ -1,11 +1,26 @@
+# Author: Christopher Boyd
+# GitHub username: CtheBoyd
+# Date: 5/18/2022
+# Description: Takes an alphanumeric and special character string returning only letters and the count of each.
+#
+
 def count_letters(string):
-    your_dict={}
-    for i in string.upper():
-        if i in your_dict:
-            your_dict[i] += 1
-        else:
-            your_dict[i] = 1
-    return your_dict
+    """Takes an alphanumeric and special character string returning only letters and the count of each. """
 
+    alpha = {}
 
-print(count_letters("AaBbCcDcEe"))
+    for lp in string:
+
+        lp = lp.upper()
+
+        if 'A' <= lp <= 'Z':
+
+            if lp not in alpha:
+
+                alpha[lp] = 0
+
+            alpha[lp] += 1
+
+    return alpha
+
+print(count_letters("AaBb*&%?C12345AFDAFDFASDFASDFdfsdfasdfdsfYJKYJLKHJKL%^#%^%$&#^$*&(*)*(*&^%$<>?6cDcEe"))
