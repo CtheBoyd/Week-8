@@ -12,5 +12,5 @@ def words_in_both(sent_1, sent_2):
 
     return sent_1.intersection(sent_2)
 
-common_words = words_in_both("She is a jack of all trades", 'Jack was tallest of all')
-print(common_words)
+#common_words = words_in_both("She is a jack of all trades", 'Jack was tallest of all')
+#print(common_words)

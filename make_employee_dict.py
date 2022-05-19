@@ -1,16 +1,13 @@
 # Author: Christopher Boyd
 # GitHub username: CtheBoyd
 # Date: 5/18/2022
-# Description: Asks user to provide five numbers and then provides an average.
+# Description: Returns asked for employee information using the key(employee ID number).
 #
 
 class Employee:
+    """calls information from each employee lists"""
 
     def __init__(self, name, ID_number, salary, email):
-
-       #Set the values of
-
-       #the data members of the class.
 
         self._name = name
 
@@ -32,21 +29,13 @@ class Employee:
     def get_email_address(self):
         return self._email_address
 
-#Define the function
-
-#make_employee_dict().
-
 def make_employee_dict(list_names, list_ID, list_salary, list_email):
+    """"calls information from Employee and returns dictionary for the key"""
+    employee_dict = {}
 
-   #Define the dictionary
+    list_len = len(list_ID)
 
-   #to store the results.
-
-   employee_dict = {}
-
-   list_len = len(list_ID)
-
-   for lp in range(list_len):
+    for lp in range(list_len):
 
        name = list_names[lp]
 
@@ -58,11 +47,11 @@ def make_employee_dict(list_names, list_ID, list_salary, list_email):
 
        employee_dict[id_num] = Employee(name, id_num, salary, email)
 
-   return employee_dict
+    return employee_dict
 
-emp_names = ["Jean", "Kat", "Pomona"]
-emp_ids = ["100", "101", "102"]
-emp_sals = ["30", "35", "28"]
-emp_emails = ["Jean@aol.com", "Kat@aol.com", "Pomona@aol.com"]
-result = make_employee_dict(emp_names, emp_ids, emp_sals, emp_emails)
-print(result["100"].get_name())
+#emp_names = ["Jean", "Kat", "Pomona"]
+#emp_ids = ["100", "101", "102"]
+#emp_sals = ["30", "35", "28"]
+#emp_emails = ["Jean@aol.com", "Kat@aol.com", "Pomona@aol.com"]
+#result = make_employee_dict(emp_names, emp_ids, emp_sals, emp_emails)
+#print(result["100"].get_salary())

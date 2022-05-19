@@ -23,4 +23,4 @@ def count_letters(string):
 
     return alpha
 
-print(count_letters("AaBb*&%?C12345AFDAFDFASDFASDFdfsdfasdfdsfYJKYJLKHJKL%^#%^%$&#^$*&(*)*(*&^%$<>?6cDcEe"))
+#print(count_letters("AaBb*&%?C12345AFDAFDFASDFASDFdfsdfasdfdsfYJKYJLKHJKL%^#%^%$&#^$*&(*)*(*&^%$<>?6cDcEe"))
